@@ -44,7 +44,7 @@ jobs:
               env:
                 PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_TOKEN }}
 
-            # pulumi
+            # pulumi - up
             - name: "exec pulumi"
               uses:  pulumi/actions@v3
               with:

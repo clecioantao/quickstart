@@ -35,6 +35,12 @@ jobs:
             - name: "setup GCP"
               uses: "google-github-actions/setup-gcloud@v1"
 
+            # pulumi stack initialization
+            - name: Initialize Pulumi Stack
+              run: pulumi stack init dev
+              env:
+                PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_TOKEN }}
+
             # pulumi
             - name: "exec pulumi"
               uses:  pulumi/actions@v3
